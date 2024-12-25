@@ -1,0 +1,26 @@
+{
+  "name": "wind-ui",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "build:scss": "sass src/scss/main.scss dist/main.css --style=compressed --no-source-map",
+    "watch:scss": "sass --watch src/scss:dist",
+    "build:js": "esbuild src/js/loader.js --bundle --minify --outfile=dist/loader.min.js",
+    "deploy": "vercel --prod"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DrasticCoder/wing-ui.git"
+  },
+  "keywords": [],
+  "author": "DrasticCoder",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DrasticCoder/wing-ui/issues"
+  },
+  "homepage": "https://github.com/DrasticCoder/wing-ui#readme"
+}
