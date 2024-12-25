@@ -1,0 +1,140 @@
+/* Reset Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  background: #f3f3f3;
+  color: #333;
+  line-height: 1.5;
+}
+
+/* Typography */
+.text-center {
+  text-align: center;
+}
+
+.text-bold {
+  font-weight: bold;
+}
+
+.text-large {
+  font-size: 2rem;
+}
+
+.text-black {
+  color: #000;
+}
+
+.text-white {
+  color: #fff;
+}
+
+/* Backgrounds */
+.bg-yellow {
+  background-color: #ffcc00;
+}
+
+.bg-pink {
+  background-color: #ff00cc;
+}
+
+.bg-blue {
+  background-color: #00ccff;
+}
+
+.bg-gray {
+  background-color: #e0e0e0;
+}
+
+/* Borders and Shadows */
+.border {
+  border: 2px solid #000;
+}
+
+.shadow {
+  box-shadow: 5px 5px 0px #000;
+}
+
+.rounded {
+  border-radius: 8px;
+}
+
+/* Layout Utilities */
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.flex {
+  display: flex;
+}
+
+.flex-center {
+  justify-content: center;
+  align-items: center;
+}
+
+.grid {
+  display: grid;
+  gap: 20px;
+}
+
+.grid-cols-2 {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.grid-cols-3 {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+/* Buttons */
+.btn {
+  padding: 10px 20px;
+  font-size: 1rem;
+  border: 2px solid #000;
+  background: transparent;
+  cursor: pointer;
+  transition: transform 0.2s ease-in-out;
+}
+
+.btn:hover {
+  transform: scale(1.1);
+}
+
+.btn-primary {
+  background-color: #ffcc00;
+  color: #000;
+}
+
+.btn-secondary {
+  background-color: #00ccff;
+  color: #fff;
+}
+
+/* Neo Brutalist Cards */
+.card {
+  padding: 20px;
+  border: 2px solid #000;
+  background-color: #fff;
+  box-shadow: 5px 5px 0px #000;
+  text-align: center;
+}
+
+/* Headers */
+.header {
+  padding: 50px 0;
+  background: #ffcc00;
+  text-align: center;
+  box-shadow: 5px 5px 0px #000;
+}
+
+.header h1 {
+  font-size: 3rem;
+  font-weight: bold;
+  color: #000;
+}
