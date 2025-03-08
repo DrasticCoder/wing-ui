@@ -1,0 +1,78 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
+// Button Component
+.button,
+[data-button] {
+  @include button($bg-color: $primary-color, $color: $text-color);
+}
+
+// Card component
+.card,
+[data-card] {
+  @include card(
+    $bg-color: $background-color,
+    $border: $border-width solid $border-color
+  );
+}
+
+// Tooltip Component
+
+.tooltip,
+[data-tooltip] {
+  @include tooltip();
+  &.active {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+// Modal Component
+[data-modal] {
+  display: none;
+  background-color: rgba(0, 0, 0, 0.9); // Dark backdrop for a dramatic look
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  border: $border-width solid $primary-color; // Bold border
+
+  &.active {
+    display: flex;
+  }
+
+  // Modal inner content container
+  .modal-content {
+    background-color: $background-color;
+    color: $text-color;
+    // padding: $base-spacing * 2;
+    border: $border-width solid $primary-color;
+    max-width: 90%;
+    max-height: 90%;
+    overflow: auto;
+    font-family: $font-family-base;
+  }
+}
+
+// Accordion Component
+[data-accordion] {
+  [data-accordion-header] {
+    cursor: pointer;
+    font-family: $font-family-base;
+    font-weight: bold;
+    // padding: $base-spacing;
+    border: $border-width solid $primary-color;
+    margin-bottom: calc(#{$base-spacing} / 2);
+    text-transform: uppercase;
+  }
+  .accordion-content {
+    padding: $base-spacing;
+    border: $border-width dashed $secondary-color;
+    margin-bottom: $base-spacing;
+    font-family: $font-family-base;
+  }
+}

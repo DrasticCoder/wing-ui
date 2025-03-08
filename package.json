@@ -7,9 +7,9 @@
     "doc": "docs"
   },
   "scripts": {
-    "build:scss": "sass src/scss/main.scss dist/main.css --style=compressed --no-source-map",
-    "watch:scss": "sass --watch src/scss:dist",
-    "build:js": "esbuild src/js/loader.js --bundle --minify --outfile=dist/loader.min.js",
+    "build:css": "sass scss/main.scss dist/main.css --no-source-map && sass scss/main.scss dist/main.min.css --style=compressed --no-source-map",
+    "build:js": "esbuild js/index.js --bundle --minify --outfile=dist/index.min.js",
+    "build": "npm run build:css && npm run build:js",
     "deploy": "vercel --prod"
   },
   "repository": {

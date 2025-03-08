@@ -1,0 +1,69 @@
+@use 'variables' as *;
+
+// Brutal mixin )(for border, shadow, and background)
+@mixin brutal($background: $primary-color, $border: $border-color) {
+  border-radius: 0;
+  box-shadow: 4px 4px 0 $border;
+  border: 2px solid $border;
+  background-color: $background;
+}
+
+// Button Component mixins
+@mixin button($bg-color, $color, $padding: $base-spacing) {
+  @include brutal($bg-color, $border-color);
+  background-color: $bg-color;
+  color: $color;
+  padding: $padding;
+  cursor: pointer;
+  font-family: 'Courier New', Courier, monospace;
+  font-weight: bold;
+  transition: background-color 0.2s ease, color 0.2s ease, box-shadow 0.2s ease,
+    transform 0.2s ease;
+  &:hover {
+    box-shadow: 2px 2px 0 #000;
+    transform: translate(2px, 2px);
+  }
+}
+
+// Card Component mixins
+@mixin card($bg-color, $border, $padding: $base-spacing) {
+  @include brutal($bg-color, $border-color);
+  padding: $padding;
+  font-family: 'Courier New', Courier, monospace;
+  font-weight: bold;
+  transition: background-color 0.2s ease, color 0.2s ease, box-shadow 0.2s ease,
+    transform 0.2s ease;
+}
+
+// Tooltip Component mixins
+@mixin tooltip(
+  $bg-color: $primary-color,
+  $text-color: $text-color,
+  $border-color: $border-color,
+  $padding: 0.5rem
+) {
+  @include brutal($bg-color, $border-color);
+  color: $text-color;
+  padding: $padding;
+  font-family: $font-family-base;
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  white-space: nowrap;
+  position: absolute;
+  z-index: 999;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  opacity: 0;
+  transform: translateY(4px); // Slight push-down effect when hidden
+
+  // Arrow indicator (pointing downward)
+  &::after {
+    content: '';
+    position: absolute;
+    top: 100%; // Position the arrow at the bottom of the tooltip
+    left: 50%;
+    transform: translateX(-50%);
+    border-width: 6px;
+    border-style: solid;
+    border-color: $bg-color transparent transparent transparent;
+  }
+}
